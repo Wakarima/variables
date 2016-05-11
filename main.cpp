@@ -1,28 +1,22 @@
 #include <iostream>
 #include <string>
 
-#include "tria.h"
-#include "shape.h"
+#include "student.h"
+#include "university.h"
 
 
 
+using namespace std;
 
- using namespace std;
- 
 int main(){
-    
-    float base,height;
-    
-     Triangle tria(10,6);
-
- std::cout << tria.getName() << std::endl;
-
-    
-    cout<<"enter the base and height of the triangle";
-    
-    cin >> base >> height;
-    
-    cout<<"\nArea of triangle is"<<tria.area(base,height) <<endl;
+  Student *stud = new Student("Mr. Smart Student", "00001");
+  cout << "Student name: " << stud->getName()
+       << " has Student ID: " << stud->getId() << endl;
+  {
+    University uni(stud);
+    uni.getAllStudents();
+  }
+  cout << stud->getName() << " ID: " << stud->getId()
+       << " will be out of school soon" << endl;
+  return 0;
 }
-
-
